@@ -23,3 +23,20 @@ mongoose.connect(process.env.MONGO_URI, {
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+const express = require('express');
+const dbClient = require('./config/database');
+
+const app = express();
+app.use(express.json());
+
+(async () => {
+  await dbClient.connect();
+})();
+
+app.get('/', (req, res) => {
+  res.send('Scanzaclip Admin API is running 🚀');
+});
+
+app.listen(process.env.PORT, () => {
+  console.log(`✅ Server running on port ${process.env.PORT}`);
+});
