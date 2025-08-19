@@ -1,1 +1,17 @@
-
+{
+  "users": [
+    {
+      "id": "user1",
+      "name": "Thanva Phupingbut",
+      "alias": "TP Sclip",
+      "role_id": "founder",
+      "email": "thanva@example.com",
+      "projects": ["scanzaclip", "agi"]
+    }
+  ],
+  "roles": [
+    { "role_id": "founder", "permissions": ["full_access"] },
+    { "role_id": "admin", "permissions": ["manage_users", "view_projects"] },
+    { "role_id": "user", "permissions": ["view_projects"] }
+  ]
+}
